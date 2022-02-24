@@ -1,0 +1,30 @@
+.body{
+    background-color:#444BFF;
+    
+}
+.doldurma{
+    background-color: #F0F8FF;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 20px;
+}
+.kutu{
+    height: auto;
+    width: 200px;
+    border: 1px solid #444BFF;
+    margin: 15px;
+    background-color:#FFFFFF;
+    text-transform: capitalize;
+}
+.sonkutu{
+    width: 600px;
+    height: 120px;
+    margin: 15px;
+    background-color:#FFFFFF;
+    font-size: 15px;
+    text-transform: capitalize;
+}
+.button{
+    margin: 15px;
+    padding: 10px;
+}

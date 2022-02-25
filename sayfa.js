@@ -7,6 +7,9 @@ let neler = document.getElementById("neler")
 let calisma = document.getElementById("calisma")
 let buton = document.getElementById("btn")
 let form = document.getElementById("MyForm")
+let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
+
+//localStorage.setItem('items', JSON.stringify(itemsArray));
 
 
 buton.addEventListener("click", domclick)
@@ -17,7 +20,19 @@ function domclick(){
         alert("Eksik Bilgi Giremezsiniz!")
     }else{
         alert("Formunuz Başarıyla Kaydedildi")
-        document.getElementById("MyForm").submit();
-        
-    }         
-}
+       //document.getElementById("MyForm").submit();
+       //bilgileri Local Storage'e kaydettik.
+       form.addEventListener('submit' , function (e) {
+          e.preventDefault();
+          itemsArray.push(isim.value);
+          itemsArray.push(soyad.value);
+          itemsArray.push(neden.value);
+          itemsArray.push(neler.value);
+          itemsArray.push(calisma.value);
+          
+          localStorage.setItem('items', JSON.stringify(itemsArray));
+
+          
+    })
+    form.submit();
+} }

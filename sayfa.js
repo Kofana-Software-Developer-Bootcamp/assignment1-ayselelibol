@@ -24,6 +24,7 @@ function domclick(){
        //bilgileri Local Storage'e kaydettik.
        form.addEventListener('submit' , function (e) {
           e.preventDefault();
+         
           itemsArray.push(isim.value);
           itemsArray.push(soyad.value);
           itemsArray.push(neden.value);
@@ -31,8 +32,20 @@ function domclick(){
           itemsArray.push(calisma.value);
           
           localStorage.setItem('items', JSON.stringify(itemsArray));
+          let persons = {
+            ad : isim.value,
+			soyad : soyad.value,
+			aciklama1 : neden.value,
+			aciklama2 : neler.value,
+			aciklama3 : calisma.value,	
+		
+          }
+          console.log(persons);
+          form.reset();
 
-          
     })
-    form.submit();
+
+    
+   
+   
 } }
